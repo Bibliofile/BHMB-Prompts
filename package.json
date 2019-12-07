@@ -1,0 +1,24 @@
+{
+  "name": "bhmb-starter",
+  "version": "1.0.1",
+  "description": "A simple starter project to make it simpler to create extensions for the Blockheads MessageBot",
+  "main": "./build/bundle.js",
+  "scripts": {
+    "build": "rollup --config",
+    "build:watch": "rollup --config --watch"
+  },
+  "author": "Bibliofile",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.27.9",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "tslint": "^5.20.1",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@bhmb/bot": "^7.2.0",
+    "@bhmb/ui": "^1.0.10"
+  }
+}
