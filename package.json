@@ -1,5 +1,6 @@
 {
-  "name": "bibliofile/prompts",
+  "name": "bhmb-prompts",
+  "exName": "bibliofile/prompts",
   "version": "1.0.1",
   "description": "Chainable prompts for the MessageBot",
   "main": "./build/bundle.js",
