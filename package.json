@@ -1,7 +1,7 @@
 {
-  "name": "bhmb-starter",
+  "name": "bhmb-prompts",
   "version": "1.0.1",
-  "description": "A simple starter project to make it simpler to create extensions for the Blockheads MessageBot",
+  "description": "Chainable prompts for the MessageBot",
   "main": "./build/bundle.js",
   "scripts": {
     "build": "rollup --config",
