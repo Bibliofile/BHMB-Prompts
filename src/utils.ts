@@ -23,5 +23,5 @@ export function getResponses (box: HTMLElement) {
       match: resp.querySelector('input')!.value,
       message: resp.querySelector('textarea')!.value
     }
-  })
+  }).filter(({ match, message }) => match.length > 0 || message.length > 0)
 }
