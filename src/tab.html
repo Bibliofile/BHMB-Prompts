@@ -1,0 +1,69 @@
+<template data-for="response">
+  <div class="response">
+    <p>Match</p>
+    <input class="input is-small">
+    <p>Message</p>
+    <textarea class="textarea is-small is-fluid" data-target="id"></textarea>
+    <hr>
+  </div>
+</template>
+
+<template data-for="prompt">
+  <div class="box">
+    <div class="columns">
+      <div class="column is-narrow is-hidden-touch">
+        <span class="drag"></span>
+      </div>
+      <div class="column">
+        <details>
+          <summary data-target="summary"></summary>
+          <p class="has-text-weight-bold">Prompt ID</p>
+          <input class="input is-small" data-target="id"></textarea>
+          <p class="has-text-weight-bold">Prompt</p>
+          <textarea class="textarea is-small is-fluid" data-target="prompt"></textarea>
+          <br>
+          <button class="button is-small is-primary is-outlined" data-do="add-response">Add response</button>
+          <div class="responses-container"></div>
+        </details>
+      </div>
+      <div class="column is-narrow">
+        <button class="button is-small is-danger is-outlined" data-do="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div class="container is-widescreen prompts">
+  <section class="section is-small">
+    <span class="button is-primary is-adding-message">+</span>
+    <h3 class="title is-4">Prompt Messages</h3>
+    <ul class="content">
+      <li>These messages can be started by SERVER for a target user.</li>
+      <li>Once started, the user's next message will be taken as the response from the player.</li>
+      <li>Each "response" part of a message will be checked in order. If a player's message looks like the "match" section of a response, the "message" section of the response will be sent. Otherwise, the next response will be checked.</li>
+      <li>If you want a fallback response, leave the "match" section of the response empty.</li>
+      <li>{{NAME}}, {{Name}}, and {{name}} in the message will be replaced with the user's name.</li>
+      <li>If you want a response to start another prompt, you can turn on split messages under advanced settings.</li>
+      <li>Prompt IDs may not contain spaces. If they contain spaces /prompt won't work.</li>
+    </ul>
+
+    <h3 class="title is-5">Example:</h3>
+    <div class="content">
+      <ol>
+        <li>Given a prompt with ID "hi", prompt "hi there" and three responses:</li>
+        <ol>
+          <li>Match "hi" to send "/admin {{name}}"</li>
+          <li>Match "hello" to send "/ban {{name}}"</li>
+          <li>Match "" to send "/kick {{name}}"</li>
+        </ol>
+        <li>When SERVER says /prompt hi PLAYER</li>
+        <li>The bot will send "hi there"</li>
+        <li>If PLAYER says "hi" they will be admined.</li>
+        <li>If PLAYER says "hello" they will be banned.</li>
+        <li>If PLAYER says anything else, they will be kicked.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="messages-container"></div>
+</div>
