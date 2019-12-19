@@ -48,7 +48,7 @@ function initListeners (ex: MessageBotExtension) {
     if (!prompt) return // User edited prompt id before they responded. Cancel
 
     for (const { match, message } of prompt.responses) {
-      if (chat.toLocaleLowerCase().includes(match) && message.length > 0) {
+      if (chat.toLocaleLowerCase().includes(match.toLocaleLowerCase().trim()) && message.length > 0) {
         ex.bot.send(message, { name: player.name })
         return
       }
